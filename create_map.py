@@ -1,4 +1,3 @@
-import argparse
 import numpy as np
 import random
 
@@ -67,4 +66,3 @@ def create_random_map(map_dimensions: tuple, percentage_obstacles: float):
                     map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
                         put_zeros_before_int(i + 1) + put_zeros_before_int(j)] = 10
     return map_arr, map_dict
-
