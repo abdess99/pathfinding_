@@ -4,7 +4,6 @@ import pygame
 import time
 
 
-
 class Error(Exception):
     pass
 
@@ -41,9 +40,10 @@ def dijkstra_dict(nodes_dict, start_node, end_node):
         del unknown_nodes[u]
     print(f'No path between {start_node} and {end_node}')
 
+
 def dijkstra_dict_visualizer(nodes_dict, start_node, end_node, blockSize, screen):
     Orange = (255, 215, 0)
-    BLUE= (0, 0, 255)
+    BLUE = (0, 0, 255)
     try:
         if start_node not in nodes_dict or end_node not in nodes_dict:
             raise BlockedNodeError

@@ -3,6 +3,7 @@ from create_map import put_zeros_before_int, create_map_visualizer
 import pygame
 import time
 
+
 class Error(Exception):
     pass
 
@@ -12,7 +13,7 @@ class BlockedNodeError(Error):
 
 
 def heuristic(node, end_node):
-    return 10*((int(node[:2]) - int(end_node[:2])) ** 2 + (int(node[:2]) - int(end_node[:2])) ** 2)
+    return 10 * ((int(node[:2]) - int(end_node[:2])) ** 2 + (int(node[:2]) - int(end_node[:2])) ** 2)
 
 
 def a_star_dict(nodes_dict, start_node, end_node):
