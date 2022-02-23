@@ -1,0 +1,3 @@
+numpy==1.22.2
+random
+pygame==1.9.6
