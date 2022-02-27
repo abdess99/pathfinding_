@@ -66,3 +66,36 @@ def create_random_map(map_dimensions: tuple, percentage_obstacles: float):
                     map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
                         put_zeros_before_int(i + 1) + put_zeros_before_int(j)] = 10
     return map_arr, map_dict
+
+
+def create_map_visualizer(map_dims, blocked_cells):
+    map_dict = {}
+    for i in range(map_dims[0]):
+        for j in range(map_dims[1]):
+            if put_zeros_before_int(i) + put_zeros_before_int(j) not in blocked_cells:
+                map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)] = {}
+                if put_zeros_before_int(i - 1) + put_zeros_before_int(j - 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i - 1) + put_zeros_before_int(j - 1)] = 14
+                if put_zeros_before_int(i - 1) + put_zeros_before_int(j + 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i - 1) + put_zeros_before_int(j + 1)] = 14
+                if put_zeros_before_int(i + 1) + put_zeros_before_int(j - 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i + 1) + put_zeros_before_int(j - 1)] = 14
+                if put_zeros_before_int(i + 1) + put_zeros_before_int(j + 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i + 1) + put_zeros_before_int(j + 1)] = 14
+                if put_zeros_before_int(i) + put_zeros_before_int(j - 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i) + put_zeros_before_int(j - 1)] = 10
+                if put_zeros_before_int(i - 1) + put_zeros_before_int(j) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i - 1) + put_zeros_before_int(j)] = 10
+                if put_zeros_before_int(i) + put_zeros_before_int(j + 1) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i) + put_zeros_before_int(j + 1)] = 10
+                if put_zeros_before_int(i + 1) + put_zeros_before_int(j) not in blocked_cells:
+                    map_dict[put_zeros_before_int(i) + put_zeros_before_int(j)][
+                        put_zeros_before_int(i + 1) + put_zeros_before_int(j)] = 10
+    return map_dict
